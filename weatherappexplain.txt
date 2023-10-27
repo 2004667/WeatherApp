@@ -1,0 +1,31 @@
+
+This Java code is an example of a simple weather application that allows you to retrieve and display weather data for a specified city using the OpenWeatherMap API. Let's break down the code and explain each part:
+
+WeatherData Class:
+
+This class defines a data structure to store weather information.
+It has three attributes: temperature, humidity, and conditions, representing temperature in degrees Celsius, humidity as a percentage, and weather conditions, respectively.
+The constructor allows you to create a WeatherData object with these attributes.
+WeatherAdapter Class:
+
+This class contains a static method adaptData that retrieves weather data from the OpenWeatherMap API and adapts it into the common WeatherData format.
+It takes two parameters: city (the name of the city for which you want to fetch weather data) and apiKey (your API key for OpenWeatherMap).
+The method does the following:
+Constructs the URL for the API request, including the city name and your API key.
+Opens an HTTP connection to the OpenWeatherMap API.
+Reads the response from the API and parses it as a JSON object using the org.json library.
+Extracts temperature and humidity from the "main" object within the JSON.
+Retrieves the "weather" array and extracts the description of weather conditions from the first object in the array.
+Creates a WeatherData object with the extracted data and returns it.
+WeatherApp Class (Main Class):
+
+In the main method, you can replace the apiKey variable with your OpenWeatherMap API key.
+The program prompts the user to enter a city name (e.g., "London, UK") using the Scanner class.
+It calls the adaptData method from the WeatherAdapter class to fetch and adapt the weather data for the specified city.
+If the data retrieval is successful (not null), it prints the weather information, including temperature, humidity, and conditions.
+If there's an issue with fetching the data, it prints an error message.
+Overall, this code demonstrates how to make an HTTP request to an API (in this case, OpenWeatherMap) to obtain weather data, parse the JSON response, and display the relevant weather information in a user-friendly format. Make sure to replace "15592ccee0d70c42e8b3efa10f23dcbb" with your actual OpenWeatherMap API key for it to work correctly.
+
+
+
+
